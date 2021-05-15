@@ -1,0 +1,79 @@
+<body>
+<div class="container-fluid">
+  <br>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1>Üdvözöllek a hasznaltauto.hu kistesójának az oldalán!</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+      <h1>Itt tudsz keresni az oldalon:</h1>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-2"></div>
+    <div class="col-md-7">
+      <input type="text" class="form-control" placeholder="Írd be mit keresel az oldalon" [(ngModel)]="searchQuery">
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-danger" (click)="search()">Katt és keresem</button>
+    </div>
+  </div>
+  <br>
+
+  <div class="row mt-3">
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+      <h1>Itt látod a feladott hirdetéseket:</h1>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <app-car-list [cars]="cars"></app-car-list>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+      <h1>Itt tudsz hirdetést feladni:</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+      <form [formGroup]="carForm">
+        <label for="id"></label>
+        <input type="text" class="form-control" id="id" placeholder="Ide írd az ID-t" formControlName="id">
+        <label for="title"></label>
+        <input type="text" class="form-control" title="title" placeholder="Ide írd a hirdetés címét"
+          formControlName="title">
+        <label for="description"></label>
+        <input type="text" class="form-control" price="price" placeholder="Ide írd az autó árát"
+          formControlName="price">
+        <label for="imgUrl"></label>
+        <input type="text" class="form-control" description="description" placeholder="Ide írd a hirdetés leírását"
+          formControlName="description">
+        <label for="price"></label>
+        <input type="text" class="form-control" imgUrl="imgUrl" placeholder="Ide írd a fotó elérhetőségét"
+          formControlName="imgUrl">
+        <label for="categories"></label>
+        <input type="text" class="form-control" categories="categories" placeholder="Ide írd a kategóriát"
+          formControlName="categories">
+        <button class="btn btn-danger mt-3" (click)="addCar()">Hirdetés rögzítése</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+</body>
